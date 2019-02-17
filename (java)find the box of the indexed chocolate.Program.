@@ -1,0 +1,43 @@
+import java.util.*;
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+        Scanner s = new Scanner(System.in);
+        int n = s.nextInt();
+        int[]choco=new int[n];
+        int index=0,sum=0;
+        for(int i=0;i<n;i++)
+        {
+        choco[i]=s.nextInt();
+        }
+        int q=s.nextInt();
+        for(int i=0;i<q;i++)
+        {
+          index=s.nextInt();
+          sum=choco[0];
+          for(int j=0;j<n;j++)
+          {
+              sum=sum+choco[j+1];
+              if(sum==index){
+              System.out.println(j+2);break;}
+              if(sum>index)
+              {
+                  if((sum-choco[j+1])<index)
+                  {
+                      System.out.println(j+2);
+                      break;
+                  }
+                  else{
+                      System.out.println(j+1);
+                      break;
+                      
+                  }
+              }
+          }
+          
+       
+        }
+    
+    }
+}
+        
+   
